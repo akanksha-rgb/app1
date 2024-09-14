@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Form for adding records -->
+    <form method="post" action="process.php">
+        <h2>Add Billing Record</h2>
+        <label for="srno">SR No:</label>
+        <input type="text" id="srno" name="srno" required>
+
+        <label for="month">Month:</label>
+        <select id="month" name="month" required>
+            <option value="">Select Month</option>
+            <option value="Jan">January</option>
+            <option value="Feb">February</option>
+            <option value="Mar">March</option>
+            <option value="Apr">April</option>
+            <option value="May">May</option>
+            <option value="Jun">June</option>
+            <option value="Jul">July</option>
+            <option value="Aug">August</option>
+            <option value="Sep">September</option>
+            <option value="Oct">October</option>
+            <option value="Nov">November</option>
+            <option value="Dec">December</option>
+        </select>
+
+        <label for="vendorName">Vendor Name:</label>
+        <input type="text" id="vendorName" name="vendorName" required>
+
+        <label for="cabNo">Cab No:</label>
+        <input type="text" id="cabNo" name="cabNo" required>
+
+        <label for="vehicleType">Vehicle Type:</label>
+        <select id="vehicleType" name="vehicleType" required>
+            <option value="">Select Vehicle Type</option>
+            <option value="4+1">4+1</option>
+            <option value="5+1">5+1</option>
+            <option value="6+1">6+1</option>
+        </select>
+
+        <label for="workingDays">Working Days:</label>
+        <input type="number" id="workingDays" name="workingDays" step="0.01" required>
+
+        <label for="appRegTrips">Approved/Registered Trips:</label>
+        <input type="number" id="appRegTrips" name="appRegTrips" step="0.01" required>
+
+        <label for="totalAmount">Total Amount:</label>
+        <input type="number" id="totalAmount" name="totalAmount" step="0.01" required>
+
+        <label for="fine">Fine:</label>
+        <input type="number" id="fine" name="fine" step="0.01" required>
+
+        <label for="diesel">Diesel:</label>
+        <input type="number" id="diesel" name="diesel" step="0.01" required>
+
+        <label for="tds">TDS:</label>
+        <input type="number" id="tds" name="tds" step="0.01" required>
+
+        <label for="netPayAmount">Net Pay Amount:</label>
+        <input type="number" id="netPayAmount" name="netPayAmount" step="0.01" required>
+
+        <button type="submit" name="addRecord">Submit</button>
+    </form>
+
+    <!-- Search form -->
+    <h2>Search Records</h2>
+    <form method="post" action="search.php">
+        <label for="searchVendor">Vendor Name:</label>
+        <input type="text" id="searchVendor" name="searchVendor">
+
+        <label for="searchMonth">Month:</label>
+        <select id="searchMonth" name="searchMonth">
+            <option value="">Select Month</option>
+            <option value="Jan">January</option>
+            <option value="Feb">February</option>
+            <option value="Mar">March</option>
+            <option value="Apr">April</option>
+            <option value="May">May</option>
+            <option value="Jun">June</option>
+            <option value="Jul">July</option>
+            <option value="Aug">August</option>
+            <option value="Sep">September</option>
+            <option value="Oct">October</option>
+            <option value="Nov">November</option>
+            <option value="Dec">December</option>
+        </select>
+
+        <label for="searchCab">Cab No:</label>
+        <input type="text" id="searchCab" name="searchCab">
+
+        <button type="submit" name="search">Search</button>
+    </form>
+
+    <!-- Display search results -->
+    <?php include 'search_results.php'; ?>
+</body>
+</html>
